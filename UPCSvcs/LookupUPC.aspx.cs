@@ -22,25 +22,28 @@ namespace UPCSvcs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           NameValueCollection QueryParams = Request.QueryString;
+           //NameValueCollection QueryParams = Request.QueryString;
             //NameValueCollection QueryParams = new NameValueCollection();
 
             // QueryParams.Add("cmd", "LookupUPC");
             // QueryParams.Add("UPCValue", "897351000427");
-            //var rdr = new StreamReader(Request.InputStream);
+            // var rdr = new StreamReader(Request.InputStream);
+            //var rdr = new StreamReader(HttpContext.Current.Request.InputStream);
             //String content = rdr.ReadToEnd();
-            //Response.Write("Rcvd:[" + content + "]");
-            //String cmd = Request.Form["cmd"];
+            //Response.Write("RcvdTest:[" + content + "]");
+           // String cmd = "none";
+            String cmd = Request.Form["cmd"];
             //String cmd = QueryParams["cmd"];
             //Response.Write("Cmd:" + cmd);
-            String cmd = QueryParams["cmd"];
+            //String cmd = QueryParams["cmd"];
             if (cmd == "LookupUPC")
             {
-                String UPCValue = QueryParams["UPCValue"];
+                String UPCValue = Request.Form["UPCValue"];
                 //String UPCValue = Request.Form["UPCValue"];
                 //Response.Write(",UPCValue:" + UPCValue);
                 // see if we know about it already
                 String knownDescription = lookupUPCInOurDB(UPCValue);
+                //String knownDescription = "HELLOWORLD";
                 if (knownDescription != "")
                 {
                     sendBackKnownValue(knownDescription);
@@ -93,7 +96,7 @@ namespace UPCSvcs
             DataSet ds = new DataSet();
 
             try {
-                String cs = "Data Source=tcp:sql2k802.discountasp.net;Initial Catalog=SQL2008_786647_crdata;Persist Security Info=True;User ID=xx;Password=yyy";
+                String cs = "Data Source=tcp:sql2k802.discountasp.net;Initial Catalog=SQL2008_786647_crdata;Persist Security Info=True;User ID=xxxx;Password=yyyy";
                 db_conn = new SqlConnection(cs);
                 db_conn.Open();
                 db_cmd.Connection = db_conn;
