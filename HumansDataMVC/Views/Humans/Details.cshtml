@@ -1,0 +1,76 @@
+﻿@model HumansDataMVC.Models.Human
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Human</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fakeSSN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fakeSSN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.legalFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.legalFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.callByFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.callByFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailAddress)
+        </dd>
+
+    </dl>
+    <hr />
+    
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fakeSSN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.legalFullName)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Children)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fakeSSN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.legalFullName)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fakeSSN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

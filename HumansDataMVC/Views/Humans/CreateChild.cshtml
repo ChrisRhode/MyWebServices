@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HumansDataMVC.Models.Human>
+
+@{
+    ViewBag.Title = "CreateChild";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateChild</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fakeSSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.legalFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callByFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fakeSSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.legalFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callByFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Add", "AddChild", new { id = item.fakeSSN })
+           
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @* the second parameter is expected to be a controller routine*@
+    @* id=0 is used to tell the Edit controller to use the original parent SSN which is in a Session variable *@
+    @Html.ActionLink("Back to Parent of Children", "Edit", new { id = "0" })
+</p>

@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPCSvcs", "UPCSvcs\UPCSvcs.csproj", "{B43D1A63-3AAF-4058-A27D-89218154C2CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumansDataMVC", "HumansDataMVC\HumansDataMVC.csproj", "{BC742CFB-24AC-4EB6-8A01-9A23D4777035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanMVC", "HumanMVC\HumanMVC.csproj", "{63B88164-14F3-4311-B910-ACAD739D5AF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B43D1A63-3AAF-4058-A27D-89218154C2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B43D1A63-3AAF-4058-A27D-89218154C2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B43D1A63-3AAF-4058-A27D-89218154C2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC742CFB-24AC-4EB6-8A01-9A23D4777035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC742CFB-24AC-4EB6-8A01-9A23D4777035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC742CFB-24AC-4EB6-8A01-9A23D4777035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC742CFB-24AC-4EB6-8A01-9A23D4777035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B88164-14F3-4311-B910-ACAD739D5AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B88164-14F3-4311-B910-ACAD739D5AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B88164-14F3-4311-B910-ACAD739D5AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B88164-14F3-4311-B910-ACAD739D5AF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

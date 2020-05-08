@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HumansDataMVC.Models.Human>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fakeSSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.legalFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callByFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailAddress)
+        </th>
+        <th>
+            @Html.Label("Nbr Of Children")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fakeSSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.legalFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callByFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailAddress)
+        </td>
+        <td>
+            @Html.Label(item.Children.Count.ToString())
+            @if (item.Children.Count > 0)
+            {
+                @Html.ActionLink("Details", "ChildrenList", new { id = item.fakeSSN })
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.fakeSSN }) |
+            @Html.ActionLink("Details", "Details", new { id = item.fakeSSN }) |
+        </td>
+    </tr>
+}
+
+</table>

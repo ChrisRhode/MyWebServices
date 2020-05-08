@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HumansDataMVC.Models.Human>
+
+@{
+    ViewBag.Title = "ChildrenList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ChildrenList</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fakeSSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.legalFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callByFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailAddress)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fakeSSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.legalFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callByFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailAddress)
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Back to List of Humans", "Index")
+</p>
